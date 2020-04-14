@@ -9,30 +9,41 @@ numero_agregadoy = tk.StringVar()
 resultado = tk.StringVar()
 
 sw = True
+menu = '''
+1. Sumar
+2. Restar
+3. Multiplicar
+4. Dividir
+5. Salir
+'''
 #Logica del programa
 def sumar():
     a = int(numero_agregadox.get())
     b = int(numero_agregadoy.get())
     res = a + b
     resultado.set(str(res))
+    print(res)
 
 def restar():
     a = int(numero_agregadox.get())
     b = int(numero_agregadoy.get())
     res = a - b
     resultado.set(str(res))
+    print(res)
 
 def multiplicar():
     a = int(numero_agregadox.get())
     b = int(numero_agregadoy.get())
     res = a * b
     resultado.set(str(res))
+    print(res)
 
 def dividir():
     a = int(numero_agregadox.get())
     b = int(numero_agregadoy.get())
     res = a / b
     resultado.set(str("{:.4f}".format(res)))
+    print(res)
 
 def limpiar():
     numero_agregadoy.set('')
@@ -64,4 +75,23 @@ tk.Label(root, textvariable=resultado, bg="#2F4858", fg='white', font=('', 24)).
 
 root.mainloop()
 
+#Consola
 
+
+print(menu)
+
+while sw:
+    opcion = int(input('Ingrese una opcion: '))
+    if opcion == 1:
+        sumar()
+    elif opcion == 2:
+        restar()
+    elif opcion == 3:
+        multiplicar()
+    elif opcion == 4:
+        dividir()
+    elif opcion == 5:
+        print('Programa finalizado')
+        sw = False
+    else:
+        print('Intente de nuevo')
